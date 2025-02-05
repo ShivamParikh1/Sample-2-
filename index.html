@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Portfolio | Your Name</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2A3B49;
+            --secondary: #7F8B96;
+            --accent: #E74C3C;
+            --light: #F8F9FA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            font-family: 'Lato', sans-serif;
+            background: var(--light);
+        }
+
+        /* Left Panel */
+        .sidebar {
+            width: 320px;
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            position: fixed;
+            height: 100vh;
+            border-right: 4px solid var(--accent);
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid var(--accent);
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 1.5rem 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 320px;
+            padding: 4rem;
+            width: calc(100% - 320px);
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+        }
+
+        /* Research Items */
+        .research-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .research-item:hover {
+            transform: translateX(10px);
+        }
+
+        .research-title {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .research-meta {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .research-links a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+
+        /* PDF Preview Cards */
+        .pdf-card {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .pdf-icon {
+            width: 40px;
+            margin-right: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="profile">
+            <img src="profile-placeholder.jpg" alt="Your Name">
+            <h1>Your Name</h1>
+            <p>Research Scientist</p>
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#research">Research</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <section id="research">
+            <h2 class="section-title">Research Experience</h2>
+            
+            <div class="research-item">
+                <h3 class="research-title">AI in Educational Technology</h3>
+                <div class="research-meta">
+                    <span>2023-Present | AIED Research Lab</span>
+                </div>
+                <p>Leading research on adaptive learning systems using machine learning...</p>
+                <div class="research-links">
+                    <a href="research-paper.pdf" target="_blank">View PDF</a>
+                    <a href="#details">Read Summary</a>
+                </div>
+            </div>
+
+            <div class="research-item">
+                <h3 class="research-title">Biomechanical Analysis</h3>
+                <div class="research-meta">
+                    <span>2022-2023 | Biomedical Institute</span>
+                </div>
+                <p>Developed novel methods for 3D spinal reconstruction...</p>
+                <div class="research-links">
+                    <a href="biomech-paper.pdf" target="_blank">View PDF</a>
+                    <a href="#details">Read Summary</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Key Projects</h2>
+            
+            <div class="pdf-card">
+                <img src="pdf-icon.svg" alt="PDF" class="pdf-icon">
+                <div>
+                    <h3>Cancer Cell Analysis</h3>
+                    <p>Comprehensive study of T-cell interactions</p>
+                </div>
+            </div>
+
+            <div class="pdf-card">
+                <img src="pdf-icon.svg" alt="PDF" class="pdf-icon">
+                <div>
+                    <h3>Materials Science Research</h3>
+                    <p>Advanced material stress testing methodology</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
