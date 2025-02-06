@@ -190,39 +190,94 @@
     <main class="main-content">
 
 <!--This is a comment. Comments are not displayed in the browser-->
+        <!-- Current aboutme section (modified) -->
+
         
 <section id="aboutme">
     <h2 class="section-title">
-      
-<iframe src="https://drive.google.com/file/d/1G6aab35Iv-89fqLFRUkrDCseM30j1oPW/preview" width="100%" height="500px" title="Seminar IWA"></iframe>
-            About me <span class="pdf-icon">📄</span>
+        <a href="about.html" class="section-link">
+            About Me <span class="pdf-icon">📄</span>
         </a>
     </h2>
-    
-    <div class="research-item">
-        <h3 class="research-title">AI in Educational Technology</h3>
-        <div class="research-meta">
-            <span>2023-Present | AIED Research Lab</span>
-        </div>
-        <p>Leading research on adaptive learning systems using machine learning...</p>
-        <div class="research-links">
-            <a href="research-paper.pdf" target="_blank">View PDF</a>
-            <a href="#details">Read Summary</a>
-        </div>
-    </div>
-
-    <div class="research-item">
-        <h3 class="research-title">Biomechanical Analysis</h3>
-        <div class="research-meta">
-            <span>2022-2023 | Biomedical Institute</span>
-        </div>
-        <p>Developed novel methods for 3D spinal reconstruction...</p>
-        <div class="research-links">
-            <a href="biomech-paper.pdf" target="_blank">View PDF</a>
-            <a href="#details">Read Summary</a>
-        </div>
-    </div>
 </section>
+
+<style>
+    /* Keep existing styles, add these */
+    .section-link {
+        cursor: pointer;
+    }
+    .pdf-icon {
+        vertical-align: middle;
+    }
+</style>
+
+<!-- New about.html page content -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Same head content as main page -->
+    <title>About Shivam Parikh</title>
+    <style>
+        /* Reuse existing variables and base styles */
+        .about-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+        
+        .about-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .bio-text {
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+        }
+        
+        .resume-frame {
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <main class="main-content">
+        <div class="about-container">
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <h1 class="about-title">About Me</h1>
+            <p class="bio-text">
+                I'm a passionate high school student specializing in STEM fields with a focus on 
+                AI research and biomedical engineering. Currently developing adaptive learning 
+                systems while exploring innovative solutions in biomechanical analysis...
+            </p>
+            <iframe src="https://drive.google.com/file/d/1G6aab35Iv-89fqLFRUkrDCseM30j1oPW/preview" 
+                    width="100%" 
+                    height="800" 
+                    class="resume-frame"
+                    title="Shivam Parikh's Resume">
+            </iframe>
+        </div>
+    </main>
+</body>
+</html>
+
+
+
+
+
+        
 
 <style>
 .section-link {
