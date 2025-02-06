@@ -1,59 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Same head content as main page -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Shivam Parikh</title>
     <style>
-        /* Reuse existing variables and base styles */
+        :root {
+            --primary: #2A3B49;
+            --secondary: #7F8B96;
+            --accent: #E74C3C;
+            --light: #F8F9FA;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: var(--light);
+            line-height: 1.6;
+        }
+
         .about-container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 2rem;
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 3rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
         }
-        
+
         .about-title {
-            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.75rem;
             color: var(--primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
         }
-        
+
+        .about-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
         .bio-text {
-            line-height: 1.8;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
             color: var(--secondary);
-        }
-        
-        .resume-frame {
-            border: 2px solid var(--accent);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            padding: 2rem;
+            background: rgba(247, 247, 247, 0.5);
             border-radius: 8px;
-            margin-top: 2rem;
+            border-left: 4px solid var(--accent);
         }
-        
+
+        .resume-container {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .resume-container:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .resume-frame {
+            width: 100%;
+            height: 1000px;
+            border: none;
+        }
+
         .back-link {
-            display: inline-block;
-            margin-bottom: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             color: var(--accent);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            transition: var(--transition);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            background: rgba(231, 76, 60, 0.1);
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+            background: rgba(231, 76, 60, 0.15);
+        }
+
+        .back-link::before {
+            content: '←';
+            font-weight: 700;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: var(--transition);
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                margin: 2rem;
+                padding: 1.5rem;
+            }
+            
+            .resume-frame {
+                height: 600px;
+            }
+            
+            .bio-text {
+                padding: 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .about-container {
+            animation: fadeIn 0.6s ease-out;
         }
     </style>
 </head>
 <body>
     <main class="main-content">
         <div class="about-container">
-            <a href="index.html" class="back-link">← Back to Home</a>
+            <a href="index.html" class="back-link">Back to Home</a>
+            
             <h1 class="about-title">About Me</h1>
-            <p class="bio-text">
-                I'm a passionate high school student specializing in STEM fields with a focus on 
-                AI research and biomedical engineering. Currently developing adaptive learning 
-                systems while exploring innovative solutions in biomechanical analysis...
-            </p>
-            <iframe src="https://drive.google.com/file/d/1G6aab35Iv-89fqLFRUkrDCseM30j1oPW/preview" 
-                    width="100%" 
-                    height="800" 
-                    class="resume-frame"
-                    title="Shivam Parikh's Resume">
-            </iframe>
+            
+            <div class="bio-text">
+                <p>I'm a passionate high school student specializing in STEM fields with a focus on AI research and biomedical engineering. My work bridges innovative technology with practical applications, currently developing adaptive learning systems while exploring cutting-edge solutions in biomechanical analysis.</p>
+                
+                <p>When I'm not in the lab, you'll find me competing in science olympiads, mentoring junior researchers, or exploring the intersection of art and technology through computational design.</p>
+            </div>
+
+            <div class="resume-container">
+                <iframe src="https://drive.google.com/file/d/1G6aab35Iv-89fqLFRUkrDCseM30j1oPW/preview" 
+                        class="resume-frame"
+                        title="Shivam Parikh's Resume">
+                </iframe>
+            </div>
+
+            <a href="your-resume.pdf" download class="download-btn">
+                Download Full Resume
+            </a>
         </div>
     </main>
 </body>
