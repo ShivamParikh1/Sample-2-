@@ -4,32 +4,89 @@
     <meta charset="UTF-8">
     <title>AI Media Analysis | Shivam Parikh</title>
     <style>
-        /* Reuse existing styles from about page */
-        .side-panel {
-            background: var(--primary);
+        :root {
+            --primary: #2A3B49;
+            --secondary: #7F8B96;
+            --accent: #E74C3C;
+            --light: #F8F9FA;
         }
-        
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: var(--light);
+            line-height: 1.6;
+        }
+
+        .side-panel {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 50px;
+            background: var(--primary);
+            z-index: -1;
+        }
+
+        .left-panel { left: 0; }
+        .right-panel { right: 0; }
+
         .analysis-container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 4rem auto;
-            padding: 3rem 4rem;
+            padding: 3rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .about-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .about-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
         }
 
         .analysis-description {
             font-size: 1.1rem;
-            line-height: 1.9;
             color: var(--secondary);
             margin-bottom: 3rem;
+            line-height: 1.8;
             padding: 2rem;
+            background: rgba(247, 247, 247, 0.5);
             border-left: 4px solid var(--accent);
-            background: rgba(247, 247, 247, 0.4);
         }
 
         .research-frame {
-            border: 2px solid var(--primary);
+            border: 2px solid var(--accent);
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(42, 59, 73, 0.1);
+            margin-top: 2rem;
+        }
+
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .side-panel { display: none; }
+            .analysis-container {
+                margin: 2rem;
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -39,14 +96,14 @@
 
     <main class="main-content">
         <div class="analysis-container">
-            <a href="index.html" class="back-link">← Back to Research</a>
+            <a href="index.html" class="back-link">← Back to Home</a>
             
-            <h1 class="about-title">AI in Media: 2023 Landscape Analysis</h1>
+            <h1 class="about-title">AI in Media: 2023 Content Analysis</h1>
             
             <div class="analysis-description">
-                <p>This rigorous academic examination evaluates the portrayal of artificial intelligence across 500+ media sources from 23 countries, employing natural language processing and sentiment analysis techniques. The study reveals significant correlations between media framing and public perception indices, particularly in coverage of ethical AI development and workforce automation narratives.</p>
+                <p>This comprehensive analysis examines the portrayal of artificial intelligence in contemporary media through quantitative content analysis of 500+ articles from major publications. The study employs natural language processing techniques to identify trends in AI representation, public perception patterns, and ethical considerations in media reporting.</p>
                 
-                <p>Methodology combines computational linguistics with traditional content analysis frameworks, establishing a novel metric for bias quantification in AI-related journalism. Research conducted under peer review supervision with adherence to ACM ethical guidelines.</p>
+                <p>Key findings reveal significant correlations between media framing and public understanding of AI capabilities, with particular focus on ethical implications and workforce automation narratives. Methodology combines computational analysis with traditional content evaluation frameworks.</p>
             </div>
 
             <div class="research-frame">
@@ -55,14 +112,6 @@
                         height="900"
                         title="AI Media Analysis Paper">
                 </iframe>
-            </div>
-
-            <div class="download-section">
-                <a href="https://drive.google.com/uc?export=download&id=1OlYBZoU0UvZu6jEo9Ztj8Pj67bqrgMhU" 
-                   class="download-btn"
-                   download="Parikh_AI-Media-Analysis-2023.pdf">
-                   Download Full Paper
-                </a>
             </div>
         </div>
     </main>
