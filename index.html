@@ -275,25 +275,85 @@
 
         
         <section id="projects">
-            <h2 class="section-title">Key Projects</h2>
-            
-            <div class="pdf-card">
-                <img src="pdf-icon.svg" alt="PDF" class="pdf-icon">
-                <div>
-                    <h3>Cancer Cell Analysis</h3>
-                    <p>Comprehensive study of T-cell interactions</p>
-                </div>
+    <h2 class="section-title">Key Projects</h2>
+    
+    <a href="biofilm-research.html" class="pdf-card">
+        <div class="project-content">
+            <div class="project-badge">Upcoming Paper</div>
+            <img src="pdf-icon.svg" alt="PDF" class="pdf-icon">
+            <div>
+                <h3>Biofilm Detection in Microgravity</h3>
+                <p>Developing reflectance-based monitoring systems for biofilm growth in hydroponic systems. 
+                Conducting microgravity simulation experiments to study extraterrestrial biofilm formation patterns. 
+                Collaborative research with space bioscience teams.</p>
             </div>
+        </div>
+    </a>
 
-            <div class="pdf-card">
-                <img src="pdf-icon.svg" alt="PDF" class="pdf-icon">
-                <div>
-                    <h3>Materials Science Research</h3>
-                    <p>Advanced material stress testing methodology</p>
-                </div>
-            </div>
-        </section>
-<!--  -->
+    <a href="wildfire-uas.html" class="pdf-card">
+        <img src="pdf-icon.svg" alt="PDF" class="pdf-icon">
+        <div>
+            <h3>Wildfire Management UAS System</h3>
+            <p>Developed LADDCS dataset for drone-based wildfire monitoring. Created annotated masks for aerial imagery, 
+            designed UAS hardware configurations, and contributed to deep learning models for fire pattern prediction. 
+            Field tested in Ohio wilderness areas.</p>
+        </div>
+    </a>
+</section>
+
+<style>
+.pdf-card {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pdf-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.project-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--accent);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.project-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.pdf-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.pdf-card p {
+    color: var(--secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .project-badge {
+        top: 10px;
+        right: 10px;
+        font-size: 0.7rem;
+    }
+}
+</style>
+        
+        <!--  -->
+
+        
 <section id="contact">
     <h2 class="section-title">Contact</h2>
     
