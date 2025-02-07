@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Biofilm Research | Shivam Parikh</title>
     <style>
-        /* Same CSS as About Me page */
         :root {
             --primary: #2A3B49;
             --secondary: #7F8B96;
@@ -16,27 +15,13 @@
             font-family: 'Lato', sans-serif;
             background: var(--light);
             line-height: 1.6;
+            margin: 0;
         }
-
-        .side-panel {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            width: 50px;
-            background: var(--primary);
-            z-index: -1;
-        }
-
-        .left-panel { left: 0; }
-        .right-panel { right: 0; }
 
         .project-container {
             max-width: 1000px;
             margin: 4rem auto;
             padding: 3rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
         }
 
         .section-title {
@@ -60,62 +45,49 @@
         .project-description {
             font-size: 1.1rem;
             color: var(--secondary);
-            margin-bottom: 3rem;
             line-height: 1.8;
             padding: 2rem;
-            border-left: 4px solid var(--accent);
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
             color: var(--accent);
             text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 2.5rem;
-            transition: all 0.3s ease;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            background: rgba(231, 76, 60, 0.1);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
         }
 
         .back-link:hover {
             transform: translateX(-5px);
-            background: rgba(231, 76, 60, 0.15);
         }
 
-        @media (max-width: 768px) {
-            .side-panel { display: none; }
-            .project-container {
-                margin: 2rem;
-                padding: 1.5rem;
-            }
+        .highlight {
+            color: var(--accent);
+            font-weight: 700;
         }
     </style>
 </head>
 <body>
-    <div class="side-panel left-panel"></div>
-    <div class="side-panel right-panel"></div>
-
     <main class="main-content">
         <div class="project-container">
-            <a href="index.html" class="back-link">← Back to Projects</a>
+            <a href="index.html" class="back-link">← Back to Home</a>
             
-            <h1 class="section-title">Biofilm Detection in Microgravity</h1>
+            <h1 class="section-title">Biofilm Detection Research</h1>
             
             <div class="project-description">
-                <p>This NASA-affiliated research investigates reflectance spectroscopy as a non-destructive method for early biofilm detection in hydroponic systems. Developing protocols for microgravity simulation using clinostat rotation devices to study biofilm formation patterns in space-analog environments.</p>
+                <p>Conducted at <span class="highlight">Star Labs (OSU)</span>, this project focuses on developing non-destructive reflectance spectroscopy methods to detect biofilm growth in hydroponic systems. Key aspects include:</p>
                 
-                <p>Experimental design includes spectral analysis of Pseudomonas aeruginosa biofilms at various growth stages, with comparative Earth vs simulated microgravity environment data.</p>
-            </div>
+                <ul>
+                    <li>Microgravity simulation using clinostat rotation devices</li>
+                    <li>Spectral analysis of Pseudomonas aeruginosa biofilms</li>
+                    <li>Comparative Earth vs space environment data collection</li>
+                </ul>
 
-            <div class="research-frame">
-                <iframe src="your-biofilm-pdf-link.pdf" 
-                        width="100%" 
-                        height="800"
-                        title="Biofilm Research Paper">
-                </iframe>
+                <p>Collaborating with NASA-affiliated researchers to establish early detection protocols for spacecraft hydroponic systems.</p>
             </div>
         </div>
     </main>
