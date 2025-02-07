@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>AI Media Analysis | Shivam Parikh</title>
     <style>
+    
         :root {
             --primary: #2A3B49;
             --secondary: #7F8B96;
@@ -73,13 +74,31 @@
             margin-top: 2rem;
         }
 
-        .back-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            display: inline-block;
-        }
+       \
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    transition: all 0.3s ease;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    background: rgba(231, 76, 60, 0.1);
+}
+
+.back-link:hover {
+    transform: translateX(-5px);
+    background: rgba(231, 76, 60, 0.15);
+}
+
+.back-link::before {
+    content: '←';
+    font-weight: 700;
+}
+
 
         @media (max-width: 768px) {
             .side-panel { display: none; }
