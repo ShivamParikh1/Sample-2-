@@ -274,46 +274,121 @@
 <!--This is a comment. Comments are not displayed in the browser-->
 
         
-       <section id="projects">
+<section id="projects">
     <h2 class="section-title">Key Projects</h2>
     
-    <a href="biofilm-research.html" class="pdf-card">
-        <img src="pdf-icon.svg" alt="PDF" class="pdf-icon">
-        <div>
-            <h3>Biofilm Detection in Microgravity</h3>
-            <p>Reflectance-based monitoring systems for biofilm growth in hydroponic systems...</p>
-        </div>
-    </a>
-
-    <a href="wildfire-uas.html" class="pdf-card">
-        <div class="project-content">
-            <div class="project-badge">Upcoming Paper</div>
-            <img src="pdf-icon.svg" alt="PDF" class="pdf-icon">
-            <div>
-                <h3>Wildfire Management UAS System</h3>
-                <p>LADDCS dataset development for drone-based wildfire monitoring...</p>
+    <div class="projects-grid">
+        <a href="biofilm-research.html" class="project-card">
+            <div class="project-content">
+                <h3 class="project-title">Biofilm Detection in Microgravity</h3>
+                <div class="project-meta">Star Labs (OSU)</div>
+                <p class="project-description">Developing reflectance-based monitoring systems for biofilm growth analysis in hydroponic systems under simulated microgravity conditions.</p>
+                <div class="project-footer">
+                    <span class="project-tag">Biophysics</span>
+                    <span class="project-tag">NASA Collaboration</span>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
+
+        <a href="wildfire-uas.html" class="project-card">
+            <div class="project-content">
+                <div class="project-badge">Upcoming Paper</div>
+                <h3 class="project-title">Wildfire Management UAS System</h3>
+                <div class="project-meta">OSU Autonomous Systems Lab</div>
+                <p class="project-description">LADDCS dataset development for drone-based wildfire monitoring and deep learning model optimization.</p>
+                <div class="project-footer">
+                    <span class="project-tag">Computer Vision</span>
+                    <span class="project-tag">Field Research</span>
+                </div>
+            </div>
+        </a>
+    </div>
 </section>
 
 <style>
+.projects-grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.project-title {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.project-meta {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    color: var(--secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.project-footer {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.project-tag {
+    background: rgba(231, 76, 60, 0.1);
+    color: var(--accent);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
 .project-badge {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 1rem;
+    right: 1rem;
     background: var(--accent);
     color: white;
-    padding: 5px 12px;
+    padding: 0.4rem 1rem;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
 }
 
-.pdf-card {
-    position: relative;
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        padding: 1.5rem;
+    }
+    
+    .project-title {
+        font-size: 1.3rem;
+    }
 }
-</style> 
+</style>
         <!--  -->
 
         
