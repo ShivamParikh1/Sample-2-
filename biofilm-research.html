@@ -15,16 +15,30 @@
             font-family: 'Lato', sans-serif;
             background: var(--light);
             line-height: 1.6;
-            margin: 0;
         }
 
-        .project-container {
+        .side-panel {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 50px;
+            background: var(--primary);
+            z-index: -1;
+        }
+
+        .left-panel { left: 0; }
+        .right-panel { right: 0; }
+
+        .analysis-container {
             max-width: 1000px;
             margin: 4rem auto;
             padding: 3rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
         }
 
-        .section-title {
+        .about-title {
             font-family: 'Poppins', sans-serif;
             font-size: 2.5rem;
             color: var(--primary);
@@ -32,7 +46,7 @@
             position: relative;
         }
 
-        .section-title::after {
+        .about-title::after {
             content: '';
             position: absolute;
             bottom: -10px;
@@ -42,43 +56,55 @@
             background: var(--accent);
         }
 
-        .project-description {
+        .analysis-description {
             font-size: 1.1rem;
             color: var(--secondary);
+            margin-bottom: 3rem;
             line-height: 1.8;
             padding: 2rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            background: rgba(247, 247, 247, 0.5);
+            border-left: 4px solid var(--accent);
         }
 
         .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             color: var(--accent);
             text-decoration: none;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            display: inline-block;
-            transition: transform 0.3s ease;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            transition: all 0.3s ease;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            background: rgba(231, 76, 60, 0.1);
         }
 
         .back-link:hover {
             transform: translateX(-5px);
+            background: rgba(231, 76, 60, 0.15);
         }
 
-        .highlight {
-            color: var(--accent);
-            font-weight: 700;
+        @media (max-width: 768px) {
+            .side-panel { display: none; }
+            .analysis-container {
+                margin: 2rem;
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="side-panel left-panel"></div>
+    <div class="side-panel right-panel"></div>
+
     <main class="main-content">
-        <div class="project-container">
+        <div class="analysis-container">
             <a href="index.html" class="back-link">← Back to Home</a>
             
-            <h1 class="section-title">Biofilm Detection Research</h1>
+            <h1 class="about-title">Biofilm Detection Research</h1>
             
-            <div class="project-description">
+            <div class="analysis-description">
                 <p>Conducted at <span class="highlight">Star Labs (OSU)</span>, this project focuses on developing non-destructive reflectance spectroscopy methods to detect biofilm growth in hydroponic systems. Key aspects include:</p>
                 
                 <ul>
@@ -86,7 +112,7 @@
                     <li>Spectral analysis of Pseudomonas aeruginosa biofilms</li>
                     <li>Comparative Earth vs space environment data collection</li>
                 </ul>
-
+                
                 <p>Collaborating with NASA-affiliated researchers to establish early detection protocols for spacecraft hydroponic systems.</p>
             </div>
         </div>
