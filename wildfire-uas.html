@@ -15,6 +15,8 @@
             font-family: 'Lato', sans-serif;
             background: var(--light);
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
 
         .side-panel {
@@ -59,21 +61,31 @@
         .project-description {
             font-size: 1.1rem;
             color: var(--secondary);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             line-height: 1.8;
             padding: 2rem;
             background: rgba(247, 247, 247, 0.5);
             border-left: 4px solid var(--accent);
         }
 
+        .project-description ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .project-description li {
+            margin-bottom: 0.8rem;
+        }
+
         .status-box {
-            padding: 10px;
+            padding: 15px;
             background-color: rgba(231, 76, 60, 0.1);
             border-left: 4px solid var(--accent);
             color: var(--primary);
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 2rem;
             border-radius: 6px;
+            font-size: 0.95rem;
         }
 
         .back-link {
@@ -94,6 +106,23 @@
             transform: translateX(-5px);
             background: rgba(231, 76, 60, 0.15);
         }
+
+        .project-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .image-caption {
+            text-align: center;
+            color: var(--secondary);
+            font-size: 0.95rem;
+            margin-top: -1rem;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -107,13 +136,22 @@
             <h1 class="section-title">Wildfire Management UAS System</h1>
             
             <div class="project-description">
-                <p>Developed the LADDCS (Low-Altitude Drone Detection and Classification System) dataset containing 15,000 annotated thermal images of wildfire patterns. Implemented YOLOv7 models for real-time fire detection achieving 92.3% mAP accuracy.</p>
+                <p>Climate change and expanding wildland-urban interface (WUI) development are significantly increasing the risk of catastrophic wildfires in the eastern United States. This emerging threat underscores the critical need for advanced research into fire behavior within temperate hardwood forests and the integration of autonomous unmanned aerial systems (UAS) to enable safer, more effective wildfire management strategies.</p>
+
+                <p>At The Ohio State University's Laboratory for Autonomy in Data-Driven and Complex Systems (LADDCS), directed by Mrinal Kumar, we're developing autonomous drone technologies designed to prevent and mitigate wildfires while minimizing human risk exposure. My contributions to this initiative include:</p>
                 
-                <p>Field-tested UAS configurations in Ohio wilderness areas, optimizing sensor payloads for thermal imaging and smoke particulate analysis. Contributed to hardware design of modular drone systems for fire department deployment.</p>
+                <ul>
+                    <li>Creating annotated masks for UAS thermal imagery analysis</li>
+                    <li>Assisting in the assembly and configuration of UAS hardware systems</li>
+                    <li>Contributing to the development of deep learning datasets for fire pattern recognition</li>
+                </ul>
             </div>
 
+            <img src="UAS Sensing Image.png" alt="UAS Sensing System Diagram" class="project-image">
+            <p class="image-caption">Contributed to sensor system modeling, thermal sensing integration, and information architecture design</p>
+
             <div class="status-box">
-                Publication in progress. Paper will be updated once published.
+                Co-author on upcoming research paper - Publication in final review process (Expected Q4 2024)
             </div>
         </div>
     </main>
