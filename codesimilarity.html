@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code Similarity Research | Shivam Parikh</title>
+    <style>
+        :root {
+            --primary: #2A3B49;
+            --secondary: #7F8B96;
+            --accent: #E74C3C;
+            --light: #F8F9FA;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: var(--light);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .side-panel {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 50px;
+            background: var(--primary);
+            z-index: -1;
+        }
+
+        .left-panel { left: 0; }
+        .right-panel { right: 0; }
+
+        .project-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 3rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            padding: 2rem;
+            background: rgba(247, 247, 247, 0.5);
+            border-left: 4px solid var(--accent);
+        }
+
+        .project-description ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .project-description li {
+            margin-bottom: 0.8rem;
+        }
+
+        .status-box {
+            padding: 15px;
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--accent);
+            color: var(--primary);
+            font-weight: bold;
+            margin-top: 2rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            transition: all 0.3s ease;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            background: rgba(231, 76, 60, 0.1);
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+            background: rgba(231, 76, 60, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .image-caption {
+            text-align: center;
+            color: var(--secondary);
+            font-size: 0.95rem;
+            margin-top: -1rem;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="side-panel left-panel"></div>
+    <div class="side-panel right-panel"></div>
+
+    <main class="main-content">
+        <div class="project-container">
+            <a href="index.html" class="back-link">← Back to Home </a>
+            
+            <h1 class="section-title">Binary Code Similarity Detection</h1>
+            
+            <div class="project-description">
+                <p>This research focuses on evaluating and improving binary similarity detection by comparing traditional analysis techniques with machine learning models. The study examines methods such as BinDiff, function similarity models, and semantic code analysis across various datasets, including malware, firmware, and obfuscated binaries.</p>
+
+                <p>As part of this project, I contributed to:</p>
+                
+                <ul>
+                    <li>Collecting and curating datasets of binary code samples</li>
+                    <li>Preprocessing data for machine learning model training and evaluation</li>
+                </ul>
+            </div>
+
+            <img src="CodeSimilarityDiagram.png" alt="Binary Similarity Detection Diagram" class="project-image">
+            <p class="image-caption">Contributed to dataset curation and preprocessing for ML models.</p>
+
+            <div class="status-box">
+                Co-author on upcoming research paper - Publication in final review process (Expected Q4 2024)
+            </div>
+        </div>
+    </main>
+</body>
+</html>
