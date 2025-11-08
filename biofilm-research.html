@@ -1,122 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Biofilm Research | Shivam Parikh</title>
-    <style>
-        :root {
-            --primary: #2A3B49;
-            --secondary: #7F8B96;
-            --accent: #E74C3C;
-            --light: #F8F9FA;
-        }
+  <meta charset="UTF-8">
+  <title>Undergraduate Research Internship | Shivam Parikh</title>
+  <style>
+    :root {
+      --primary: #2A3B49;
+      --secondary: #7F8B96;
+      --accent: #E74C3C;
+      --light: #F8F9FA;
+    }
 
-        body {
-            font-family: 'Lato', sans-serif;
-            background: var(--light);
-            line-height: 1.6;
-        }
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--light);
+      line-height: 1.6;
+      margin: 0;
+    }
 
-        .side-panel {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            width: 50px;
-            background: var(--primary);
-            z-index: -1;
-        }
+    .side-panel {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 50px;
+      background: var(--primary);
+      z-index: -1;
+    }
 
-        .left-panel { left: 0; }
-        .right-panel { right: 0; }
+    .left-panel { left: 0; }
+    .right-panel { right: 0; }
 
-        .analysis-container {
-            max-width: 1000px;
-            margin: 4rem auto;
-            padding: 3rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-        }
+    .content-container {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 3rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
 
-        .about-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 2rem;
-            position: relative;
-        }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 2.5rem;
+      transition: all 0.3s ease;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      background: rgba(231, 76, 60, 0.1);
+    }
 
-        .about-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-        }
+    .back-link:hover {
+      transform: translateX(-5px);
+      background: rgba(231, 76, 60, 0.15);
+    }
 
-        .analysis-description {
-            font-size: 1.1rem;
-            color: var(--secondary);
-            margin-bottom: 3rem;
-            line-height: 1.8;
-            padding: 2rem;
-            background: rgba(247, 247, 247, 0.5);
-            border-left: 4px solid var(--accent);
-        }
+    .title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
 
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 2.5rem;
-            transition: all 0.3s ease;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            background: rgba(231, 76, 60, 0.1);
-        }
+    .title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+    }
 
-        .back-link:hover {
-            transform: translateX(-5px);
-            background: rgba(231, 76, 60, 0.15);
-        }
+    .description {
+      font-size: 1.1rem;
+      color: var(--secondary);
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+      padding: 1.5rem;
+      background: rgba(247, 247, 247, 0.5);
+      border-left: 4px solid var(--accent);
+    }
 
-        @media (max-width: 768px) {
-            .side-panel { display: none; }
-            .analysis-container {
-                margin: 2rem;
-                padding: 1.5rem;
-            }
-        }
-    </style>
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .media-item {
+      text-align: center;
+    }
+
+    .media-item img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .media-item img:hover {
+      transform: scale(1.02);
+    }
+
+    .pdf-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.25rem;
+      color: white;
+      background: var(--accent);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .pdf-link:hover {
+      background: #c0392b;
+    }
+
+    @media (max-width: 768px) {
+      .side-panel { display: none; }
+      .content-container {
+        margin: 2rem;
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="side-panel left-panel"></div>
-    <div class="side-panel right-panel"></div>
+  <div class="side-panel left-panel"></div>
+  <div class="side-panel right-panel"></div>
 
-    <main class="main-content">
-        <div class="analysis-container">
-            <a href="index.html" class="back-link">← Back to Home</a>
-            
-            <h1 class="about-title">Biofilm Detection Research</h1>
-            
-            <div class="analysis-description">
-                <p>Conducted as part of an AP with WE Service project, this initiative focuses on studying how microgravity affects biofilm formation in space. Key aspects include:</p>
-                
-                <ul>
-                    <li>Analyzing biofilm behavior in space environments and its potential risks to astronaut safety </li>
-                    <li>Utilizing open-source NASA data to examine microbial growth patterns in microgravity</li>
-                    <li>Developing algorithms for comparative analysis of biofilm growth in space versus Earth’s gravity</li>
-                     <li>Developing algorithms for comparative analysis of biofilm growth in space versus Earth’s gravity</li>
-                </ul>
-                
-                <p>The goal of this is to apply computer science and engineering to solve real-world challenges in space exploration.</p>
-            </div>
+  <main>
+    <div class="content-container">
+      <a href="index.html" class="back-link">← Back to Home</a>
+
+      <h1 class="title">Undergraduate Research Internship</h1>
+
+      <div class="description">
+        <p>During my undergraduate research internship, I worked on a project focused on understanding and analyzing solar coronal phenomena as part of a physics research initiative. This experience allowed me to explore advanced data analysis, computational modeling, and scientific communication.</p>
+
+        <p>Below are materials from my research presentation, including visuals and the official research poster and presentation slides.</p>
+      </div>
+
+      <div class="media-grid">
+        <div class="media-item">
+          <img src="me_presenting1.jpg" alt="Shivam presenting research">
         </div>
-    </main>
+
+        <div class="media-item">
+          <a href="Shivam_Research_Poster.pdf" class="pdf-link" target="_blank">View Research Poster (PDF)</a>
+        </div>
+
+        <div class="media-item">
+          <a href="Shivam_Presentation.pdf" class="pdf-link" target="_blank">View Presentation Slides (PDF)</a>
+        </div>
+
+        <div class="media-item">
+          <img src="me_presenting2.jpg" alt="Shivam during research presentation">
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
