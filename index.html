@@ -24,17 +24,14 @@
   html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--text); font-family: var(--mono); font-weight: 300; overflow-x: hidden; cursor: none; }
 
-  /* CURSOR */
   #cursor { position: fixed; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: transform 0.1s ease, background 0.2s; mix-blend-mode: difference; top:0; left:0; }
   #cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(200,255,0,0.4); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: transform 0.18s ease, width 0.3s, height 0.3s, opacity 0.3s; top:0; left:0; }
   body.hovering #cursor { transform: translate(-50%,-50%) scale(3); }
   body.hovering #cursor-ring { width: 48px; height: 48px; opacity: 0.5; }
 
-  /* CANVAS */
   #bg-canvas { position: fixed; inset: 0; z-index: 0; opacity: 0.35; }
   body::after { content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); opacity: 0.6; }
 
-  /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); background: rgba(10,10,10,0.6); }
   .nav-logo { font-family: var(--display); font-size: 1.4rem; letter-spacing: 0.15em; color: var(--text); text-decoration: none; }
   .nav-logo span { color: var(--accent); }
@@ -44,7 +41,6 @@
 
   section { position: relative; z-index: 2; }
 
-  /* HERO */
   #home { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 3rem 4rem; position: relative; overflow: hidden; }
   .hero-top { display: flex; align-items: center; gap: 2.5rem; margin-bottom: auto; margin-top: 9rem; flex-wrap: wrap; }
   .hero-photo-frame { width: 130px; height: 130px; border-radius: 50%; border: 1px solid var(--border); overflow: hidden; flex-shrink: 0; position: relative; background: rgba(200,255,0,0.06); display: flex; align-items: center; justify-content: center; }
@@ -52,7 +48,6 @@
   .hero-photo-frame .photo-fallback { font-family: var(--display); font-size: 2.2rem; color: var(--accent); letter-spacing: 0.1em; position: relative; z-index: 1; }
   .hero-greeting { font-size: 0.95rem; line-height: 1.7; color: var(--muted); max-width: 420px; font-family: var(--serif); font-style: italic; }
   .hero-greeting strong { color: var(--text); font-style: normal; }
-
   .hero-tag { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
   .hero-tag::before { content: ''; display: block; width: 40px; height: 1px; background: var(--accent); }
   .hero-name { font-family: var(--display); font-size: clamp(5rem, 14vw, 13rem); line-height: 0.88; letter-spacing: 0.02em; color: var(--text); margin-bottom: 0.5rem; overflow: hidden; }
@@ -71,24 +66,23 @@
   .stat-num span { color: var(--accent); font-size: 1.2rem; }
   .stat-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem; }
 
-  /* MARQUEE */
   .marquee-section { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1rem 0; overflow: hidden; background: rgba(200,255,0,0.03); }
   .marquee-track { display: flex; gap: 0; white-space: nowrap; animation: marquee 24s linear infinite; }
   .marquee-item { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); padding: 0 2rem; display: flex; align-items: center; gap: 2rem; }
   .marquee-item::after { content: '◆'; color: var(--accent); font-size: 0.4rem; }
   @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-  /* SECTION SHARED */
   .section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 4rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 1rem; }
   .section-title { font-family: var(--display); font-size: clamp(3rem, 6vw, 6rem); line-height: 0.9; letter-spacing: 0.02em; color: var(--text); }
   .section-count { font-size: 0.65rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; padding-bottom: 0.5rem; }
   .about-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
   .about-label::before { content: ''; display: inline-block; width: 30px; height: 1px; background: var(--accent); }
 
-  /* RESUME SECTION */
+  /* RESUME */
   #resume { padding: 6rem 3rem; max-width: 1100px; margin: 0 auto; }
-  .resume-card { border: 1px solid var(--border); background: var(--surface); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; padding: 3rem; position: relative; overflow: hidden; }
+  .resume-card { border: 1px solid var(--border); background: var(--surface); padding: 3rem; position: relative; overflow: hidden; margin-bottom: 0; }
   .resume-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--accent); opacity: 0.5; }
+  .resume-card-top { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; }
   .resume-icon-row { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.2rem; }
   .resume-icon { width: 54px; height: 54px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-size: 1rem; color: var(--accent); flex-shrink: 0; }
   .resume-name { font-family: var(--serif); font-size: 1.6rem; color: var(--text); }
@@ -100,33 +94,23 @@
   .resume-btn.primary { background: var(--accent); color: #0a0a0a; border-color: var(--accent); }
   .resume-btn.primary:hover { background: #d4ff1a; border-color: #d4ff1a; color: #0a0a0a; }
 
-  
-  .resume-preview {
-  margin-top: 2rem;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  overflow: hidden;
-}
+  .resume-embed-wrap { border: 1px solid var(--border); border-top: none; background: var(--bg); }
+  .resume-embed-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--faint); padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.6rem; }
+  .resume-embed-label::before { content: ''; display: inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+  .resume-embed-wrap iframe { width: 100%; height: 700px; border: none; display: block; }
 
-.resume-preview iframe {
-  width: 100%;
-  height: 900px;
-  display: block;
-}
-  
   .doc-links { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.5rem; }
   .doc-link { display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; border: 1px solid var(--border); font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: border-color 0.2s, color 0.2s, background 0.2s; cursor: none; }
   .doc-link:hover { border-color: var(--accent); color: var(--accent); background: rgba(200,255,0,0.04); }
   .doc-link .doc-icon { font-size: 0.7rem; color: var(--accent); flex-shrink: 0; }
   .doc-link .doc-placeholder { font-size: 0.58rem; color: var(--faint); margin-left: auto; letter-spacing: 0.1em; }
 
-  /* EXPERIENCE TIMELINE */
+  /* EXPERIENCE */
   #experience { padding: 6rem 3rem; max-width: 1100px; margin: 0 auto; }
   .timeline-filters { display: flex; gap: 0.7rem; margin-bottom: 3rem; flex-wrap: wrap; }
   .timeline-filter { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.5rem 1.1rem; border: 1px solid var(--border); color: var(--muted); cursor: none; background: none; font-family: var(--mono); transition: border-color 0.2s, color 0.2s, background 0.2s; }
   .timeline-filter:hover { color: var(--accent); }
   .timeline-filter.active { border-color: var(--accent); color: var(--accent); background: rgba(200,255,0,0.06); }
-
   .timeline { position: relative; padding-left: 2rem; }
   .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--border); }
   .timeline-item { position: relative; padding-bottom: 2.5rem; padding-left: 2.5rem; opacity: 0; transform: translateX(-20px); transition: opacity 0.6s, transform 0.6s; cursor: none; }
@@ -144,7 +128,7 @@
   .timeline-expand-hint { display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--faint); }
   .timeline-expand-hint .plus { color: var(--accent); font-size: 0.85rem; }
 
-  /* PROJECTS GALLERY */
+  /* PROJECTS */
   #projects { padding: 6rem 3rem; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .projects-inner { max-width: 1300px; margin: 0 auto; }
   .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
@@ -172,7 +156,6 @@
   .skill-item { padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 0.7rem; transition: background 0.2s, color 0.2s; cursor: none; }
   .skill-item:hover { background: rgba(200,255,0,0.05); color: var(--accent); }
   .skill-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-
   .about-meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); margin-top: 1.5rem; }
   .about-meta-item { padding: 1rem 1.2rem; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); }
   .about-meta-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.3rem; }
@@ -200,7 +183,7 @@
   /* MODAL */
   .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 500; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; backdrop-filter: blur(8px); cursor: none; }
   .modal-overlay.open { opacity: 1; pointer-events: all; }
-  .modal { background: var(--surface); border: 1px solid var(--border); max-width: 740px; width: 92%; max-height: 88vh; overflow-y: auto; transform: translateY(30px); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); position: relative; }
+  .modal { background: var(--surface); border: 1px solid var(--border); max-width: 780px; width: 92%; max-height: 90vh; overflow-y: auto; transform: translateY(30px); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); position: relative; }
   .modal-overlay.open .modal { transform: translateY(0); }
   .modal-header { padding: 2.5rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--surface); z-index: 1; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
   .modal-title { font-family: var(--display); font-size: 2rem; letter-spacing: 0.05em; color: var(--text); line-height: 1.1; }
@@ -218,13 +201,15 @@
   .modal-finding-item::before { content: '—'; color: var(--accent); flex-shrink: 0; }
   .modal-details { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); margin-bottom: 2rem; }
   .modal-detail { padding: 1rem 1.2rem; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); }
-  .modal-detail-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.3rem; }
   .modal-detail-value { font-size: 0.8rem; color: var(--text); }
-  .modal-attachments { margin-top: 0.5rem; }
-  .modal-attach-item { display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem 1rem; border: 1px solid var(--border); margin-bottom: 0.5rem; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); cursor: none; transition: border-color 0.2s, color 0.2s, background 0.2s; text-decoration: none; }
-  .modal-attach-item:hover { border-color: var(--accent); color: var(--accent); background: rgba(200,255,0,0.04); }
-  .modal-attach-icon { font-size: 0.75rem; color: var(--accent); flex-shrink: 0; }
-  .modal-attach-note { font-size: 0.6rem; color: var(--faint); margin-left: auto; }
+
+  /* Drive embeds in modal */
+  .modal-drive-section { margin-bottom: 2rem; }
+  .modal-drive-title { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--faint); }
+  .modal-drive-frame { border: 1px solid var(--border); background: var(--bg); overflow: hidden; }
+  .modal-drive-frame iframe { width: 100%; height: 500px; border: none; display: block; }
+  .modal-drive-frame.photo-frame iframe { height: 360px; }
+  .modal-no-files { padding: 1rem; border: 1px solid var(--border); font-size: 0.7rem; color: var(--faint); letter-spacing: 0.1em; }
 
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
   .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -237,8 +222,8 @@
     #resume, #experience, #about, #contact { padding: 4rem 1.5rem; }
     #projects { padding: 4rem 1.5rem; }
     .projects-grid { grid-template-columns: 1fr; }
-    .resume-card { grid-template-columns: 1fr; text-align: left; }
-    .resume-actions { flex-direction: row; }
+    .resume-card-top { grid-template-columns: 1fr; }
+    .resume-actions { flex-direction: row; flex-wrap: wrap; }
     .contact-grid { grid-template-columns: 1fr; }
     .contact-info { border-right: none; border-bottom: 1px solid var(--border); }
     .about-meta-grid { grid-template-columns: 1fr; }
@@ -246,6 +231,8 @@
     .hero-stats { width: 100%; justify-content: flex-start; }
     .stat { text-align: left; }
     .modal-details { grid-template-columns: 1fr; }
+    .resume-embed-wrap iframe { height: 420px; }
+    .modal-drive-frame iframe { height: 300px; }
   }
 </style>
 </head>
@@ -255,7 +242,6 @@
 <div id="cursor-ring"></div>
 <canvas id="bg-canvas"></canvas>
 
-<!-- NAV -->
 <nav>
   <a href="#home" class="nav-logo">SP<span>.</span></a>
   <ul class="nav-links">
@@ -268,17 +254,14 @@
   </ul>
 </nav>
 
-<!-- 1. HOME -->
 <section id="home">
   <div class="hero-top">
     <div class="hero-photo-frame">
-      <!-- EDIT HERE: replace src with your photo path once uploaded, e.g. "images/profile.jpg" -->
-      <img src="linkimage.jpeg" alt="Shivam Parikh" id="hero-photo">
+      <img src="images/profile.jpg" alt="Shivam Parikh" id="hero-photo">
       <div class="photo-fallback" id="hero-photo-fallback">SP</div>
     </div>
     <p class="hero-greeting">Hi, I'm <strong>Shivam</strong> — a Mechanical Engineering student at Ohio State building at the intersection of materials, autonomy, and aerospace.</p>
   </div>
-
   <div class="hero-tag">Mechanical Engineering · The Ohio State University · Class of 2028</div>
   <h1 class="hero-name">
     <span class="line">SHIVAM</span>
@@ -292,7 +275,7 @@
         <div class="stat-label">GPA</div>
       </div>
       <div class="stat">
-        <div class="stat-num">2</div>
+        <div class="stat-num">3</div>
         <div class="stat-label">Research roles</div>
       </div>
       <div class="stat">
@@ -307,82 +290,53 @@
   </div>
 </section>
 
-<!-- MARQUEE -->
 <div class="marquee-section">
   <div class="marquee-track" id="marquee-track"></div>
 </div>
 
-<!-- 2. RESUME -->
 <section id="resume">
   <div class="section-header reveal">
     <h2 class="section-title">RESUME</h2>
     <span class="section-count">PDF</span>
   </div>
-
- <div class="resume-card reveal">
-  <div>
-    <div class="resume-icon-row">
-      <div class="resume-icon">PDF</div>
+  <div class="resume-card reveal">
+    <div class="resume-card-top">
       <div>
-        <div class="resume-name">
-          Shivam Parikh Resume
+        <div class="resume-icon-row">
+          <div class="resume-icon">PDF</div>
+          <div>
+            <div class="resume-name">Shivam_Parikh_Resume.pdf</div>
+            <div class="resume-meta">Mechanical Engineering · OSU '28</div>
+          </div>
         </div>
-        <div class="resume-meta">
-          Updated June 2026
-        </div>
+        <p class="resume-desc">Current resume covering education, research experience, internships, and project work. Updated as new roles and publications are added.</p>
+      </div>
+      <div class="resume-actions">
+        <a href="https://drive.google.com/file/d/1FXJFYAvA_vkXP84CdOvL46PTv0v4dC0m/view" class="resume-btn primary" target="_blank">↗ Open Full Screen</a>
+        <a href="https://drive.google.com/uc?export=download&id=1FXJFYAvA_vkXP84CdOvL46PTv0v4dC0m" class="resume-btn">⬇ Download PDF</a>
       </div>
     </div>
-
-    <p class="resume-desc">
-      Mechanical Engineering student at The Ohio State University with experience in aerospace research, additive manufacturing, autonomous systems, software development, and engineering design.
-    </p>
-
-    <div class="resume-actions">
-      <a href="resume/Shivam_Parikh_Resume_V5.pdf"
-         class="resume-btn primary"
-         target="_blank">
-         Open Full Screen
-      </a>
-
-      <a href="resume/Shivam_Parikh_Resume_V5.pdf"
-         class="resume-btn"
-         download>
-         Download PDF
-      </a>
-    </div>
   </div>
-</div>
-
-<div class="resume-preview reveal">
-  <iframe
-    src="resume/Shivam_Parikh_Resume.pdf"
-    width="100%"
-    height="900px"
-    style="border:none;">
-  </iframe>
-</div>
-
- 
+  <div class="resume-embed-wrap reveal">
+    <div class="resume-embed-label">Live Preview — Shivam_Parikh_Resume.pdf</div>
+    <iframe src="https://drive.google.com/file/d/1FXJFYAvA_vkXP84CdOvL46PTv0v4dC0m/preview" title="Shivam Parikh Resume" allowfullscreen></iframe>
+  </div>
 </section>
 
-<!-- 3. EXPERIENCE -->
 <section id="experience">
   <div class="section-header reveal">
     <h2 class="section-title">EXPERIENCE</h2>
     <span class="section-count" id="experience-count">— roles</span>
   </div>
-
   <div class="timeline-filters reveal">
     <button class="timeline-filter active" data-filter="all">All</button>
     <button class="timeline-filter" data-filter="research">Research</button>
     <button class="timeline-filter" data-filter="internship">Internships</button>
     <button class="timeline-filter" data-filter="involvement">School Involvement</button>
   </div>
-
   <div class="timeline" id="timeline-container"></div>
 </section>
 
-<!-- 4. PROJECTS -->
 <section id="projects">
   <div class="projects-inner">
     <div class="section-header reveal">
@@ -393,17 +347,14 @@
   </div>
 </section>
 
-<!-- 5. ABOUT ME -->
 <section id="about">
   <div class="about-label reveal">About me</div>
   <h2 class="about-headline reveal">Engineering curiosity into <em>precision</em> — from the lab bench to the launch pad.</h2>
-
   <div class="reveal">
     <p class="about-body">I'm Shivam Parikh, a Mechanical Engineering student at The Ohio State University with intended minors in Business and Computer Science. I'm a senior by credit hours, on track to graduate in May 2028, with a 4.00 GPA.</p>
-    <p class="about-body">I'm passionate about aerospace and hands-on problem-solving, combining lab research with real engineering builds. My research background spans laser powder bed fusion of high-strength steels and autonomous UAS systems for wildfire response, while my project work covers everything from quadcopter design to gearbox engineering and Arduino-based controls.</p>
+    <p class="about-body">I'm passionate about aerospace and hands-on problem-solving, combining lab research with real engineering builds. My research background spans laser powder bed fusion of high-strength steels, autonomous UAS systems for wildfire response, and independent astrophysics research on the solar corona heating problem. My project work covers everything from quadcopter design to gearbox engineering and Arduino-based controls.</p>
     <p class="about-body">Outside of academics, I'm a member of the Buckeye Space Launch Initiative, and I stay active through weightlifting, running, tennis, and chess. I'm fluent in Hindi and Gujarati alongside English.</p>
   </div>
-
   <div class="about-meta-grid reveal">
     <div class="about-meta-item">
       <div class="about-meta-label">University</div>
@@ -422,13 +373,10 @@
       <div class="about-meta-value">Olentangy Orange HS — 4.54 W, SAT 1520, Top 2%</div>
     </div>
   </div>
-
   <div class="about-skills reveal" id="about-skills-container"></div>
-
   <div class="doc-links reveal" id="about-doc-links"></div>
 </section>
 
-<!-- 6. CONTACT -->
 <section id="contact">
   <div class="contact-big reveal">
     LET'S
@@ -458,7 +406,6 @@
   <span class="footer-made">Mechanical Engineer · OSU '28</span>
 </footer>
 
-<!-- SHARED MODAL -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal" id="modal-box">
     <div class="modal-header">
@@ -473,18 +420,12 @@
 (function() {
 "use strict";
 
-/* =====================================================================
-   CONTENT CONFIG — edit your content here only.
-   Add a new item by duplicating an existing block in the matching array.
-   Replace any "PLACEHOLDER_..." file value with a real file path once
-   you've uploaded that PDF/image next to this HTML file.
-   ===================================================================== */
 var CONFIG = {
 
   marquee: [
     "SolidWorks","MATLAB","Onshape","Thermo-Calc","FEA","SEM",
     "CAD","Gleeble Testing","Python","Java","Simulink",
-    "CNC Routing","3D Printing","Microcontrollers","Research Writing"
+    "CNC Routing","3D Printing","Microcontrollers","Research Writing","Astrophysics"
   ],
 
   skills: [
@@ -493,7 +434,7 @@ var CONFIG = {
   ],
 
   aboutDocs: [
-    { label: "Resume", file: "resume/Shivam_Parikh_Resume.pdf" },
+    { label: "Resume", file: "https://drive.google.com/file/d/1FXJFYAvA_vkXP84CdOvL46PTv0v4dC0m/view" },
     { label: "Personal Statement", file: "PLACEHOLDER_PERSONAL_STATEMENT.pdf" },
     { label: "Recommendation Letter", file: "PLACEHOLDER_RECOMMENDATION_LETTER.pdf" }
   ],
@@ -504,8 +445,23 @@ var CONFIG = {
     { label: "LinkedIn", href: "https://www.linkedin.com/in/shivam-parikh-9a8627281/", external: true }
   ],
 
-  /* category: "research" | "internship" | "involvement" */
   experience: [
+    {
+      id: "exp0",
+      category: "research",
+      date: "May 2024 – Feb 2025",
+      role: "Independent Researcher",
+      org: "The Ohio State University — Mentor: Sultana N. Nahar",
+      summary: "Independent research on the solar corona heating problem, analyzing nonthermal line broadening and Alfvén waves using advanced data analysis techniques.",
+      description: "Conducted independent research on the solar corona heating problem, analyzing nonthermal line broadening and Alfvén waves using advanced data analysis techniques. Authored a research paper and presented findings at a scientific conference, developing skills in scientific writing, visualization, and oral communication.",
+      skillsLearned: ["Nonthermal spectral line analysis","Alfvén wave theory & application","Scientific writing & publication","Data visualization","Conference presentation & oral communication"],
+      toolsUsed: ["Spectral data analysis tools","MATLAB","Scientific visualization software","LaTeX"],
+      driveFiles: [
+        { label: "Research Paper", id: "14-6hm6KZ0tGVVPtuX1upPJQRZWxFgPjK", type: "doc" },
+        { label: "Thesis Document (OSU Center of Astronomy)", id: "1rSdIundMzAJNuAsjH_uUzACBwQa95phL", type: "doc" },
+        { label: "Committee Presentation (OSU)", id: "1hzh7UwmLfPz4Dl_YSOC3zuIDjzcP1zn7", type: "doc" }
+      ]
+    },
     {
       id: "exp1",
       category: "research",
@@ -516,8 +472,11 @@ var CONFIG = {
       description: "Supported research on optimizing Laser Powder Bed Fusion (LPBF) of high-strength steel through process parameter development, testing, and microstructural analysis. Performed FEA modeling and SEM characterization for an Air Force Research Laboratory-sponsored project, and developed and presented a technical poster on the findings.",
       skillsLearned: ["Microstructural analysis","FEA modeling","SEM characterization","Technical poster development & presentation"],
       toolsUsed: ["Thermo-Calc","MATLAB","Gleeble systems","Polishing & microscopy equipment","Material testing rigs"],
-      files: [
-        { label: "Research Poster", file: "PLACEHOLDER_LPBF_POSTER.pdf" }
+      driveFiles: [
+        { label: "Poster Presentation", id: "1u_RmaItLojYpBW3PHYCN1M9CjI-ESsXu", type: "doc" },
+        { label: "Presentation Slides", id: "1eyzeLvVfdQ0hIU7PYwC0YdPGpRdUC0wo", type: "doc" },
+        { label: "Photo — Presenting Research", id: "1yPo1CqnTYsj9iov3y-csuC7JIkMciYjG", type: "photo" },
+        { label: "Photo — Beside Poster", id: "1scvSGVYX21buhXI_hwJWflryipGaIoj5", type: "photo" }
       ]
     },
     {
@@ -530,7 +489,8 @@ var CONFIG = {
       description: "Created annotated masks for UAS imagery to improve machine learning dataset accuracy. Worked with UAS systems for wildfire combat applications and utilized CAD software for component design and visualization.",
       skillsLearned: ["Image annotation for ML datasets","UAS systems familiarity","Component design & visualization"],
       toolsUsed: ["CAD software","UAS hardware","Image annotation tools"],
-      files: []
+      heroImage: "images/UAS Sensing Image.png",
+      driveFiles: []
     },
     {
       id: "exp3",
@@ -542,7 +502,7 @@ var CONFIG = {
       description: "Developing skills in 3D modeling, 3D printing, CNC routing, tool-pathing, injection molding, soldering, and microcontrollers. Learning to work within startup environments to achieve strong engineering results with limited resources. Supported engineering design projects in SolidWorks, applying CAD and CAM methodologies to improve manufacturability, streamline production processes, and ensure design feasibility.",
       skillsLearned: ["Startup engineering workflows","Design for manufacturability (DFM)","CAM methodologies"],
       toolsUsed: ["SolidWorks","CNC routing","3D printers","Injection molding equipment","Soldering tools","Microcontrollers"],
-      files: []
+      driveFiles: []
     },
     {
       id: "exp4",
@@ -554,7 +514,7 @@ var CONFIG = {
       description: "Installed software, managed hardware inventory, and supported IT systems for 1,500+ students and staff using Microsoft Office tools.",
       skillsLearned: ["IT systems support at scale","Hardware inventory management"],
       toolsUsed: ["Microsoft Office","IT support tools"],
-      files: []
+      driveFiles: []
     },
     {
       id: "exp5",
@@ -566,11 +526,10 @@ var CONFIG = {
       description: "Contributing to rocket component design, testing, and launch system refinement through hands-on engineering projects.",
       skillsLearned: ["Rocket component design","Launch systems engineering","Team-based hardware testing"],
       toolsUsed: ["CAD","Testing rigs"],
-      files: []
+      driveFiles: []
     }
   ],
 
-  /* status is optional — e.g. "In Progress", "Completed" */
   projects: [
     {
       id: "proj1",
@@ -585,7 +544,7 @@ var CONFIG = {
       skillsUsed: ["CAD modeling","Lightweight structural design","FEA"],
       skillsLearned: ["MATLAB/Simulink dynamic simulation","Performance analysis under design constraints"],
       proof: "Add proof of completion (flight test footage, photos, etc.) once available",
-      files: []
+      driveFiles: []
     },
     {
       id: "proj2",
@@ -600,7 +559,7 @@ var CONFIG = {
       skillsUsed: ["Parametric gear design","CAD assembly modeling","Engineering drawing standards"],
       skillsLearned: ["Multi-stage gear ratio calculations","GD&T fundamentals"],
       proof: "Add proof of completion (CAD renders, drawings) once available",
-      files: []
+      driveFiles: []
     },
     {
       id: "proj3",
@@ -615,7 +574,7 @@ var CONFIG = {
       skillsUsed: ["Accessibility-focused design","Technical documentation","Team-based prototyping"],
       skillsLearned: ["Design iteration based on user testing","Cross-functional team collaboration"],
       proof: "Add proof of completion (prototype photos, demo video) once available",
-      files: []
+      driveFiles: []
     },
     {
       id: "proj4",
@@ -630,65 +589,86 @@ var CONFIG = {
       skillsUsed: ["Embedded systems programming","PID control design","Sensor integration"],
       skillsLearned: ["RFID system design","Closed-loop control tuning"],
       proof: "Add proof of completion (demo videos, circuit photos) once available",
-      files: []
+      driveFiles: []
     }
   ]
 };
 
 /* =====================================================================
-   RENDER FUNCTIONS
+   HELPERS
    ===================================================================== */
+function esc(str) { return String(str == null ? "" : str); }
 
-function escapeHtml(str) {
-  return String(str == null ? "" : str);
+function driveEmbedUrl(id) {
+  return "https://drive.google.com/file/d/" + id + "/preview";
 }
 
-function setupImageFallback(imgEl, fallbackEl) {
-  if (!imgEl) return;
-  imgEl.addEventListener("error", function() {
-    imgEl.style.display = "none";
-    if (fallbackEl) fallbackEl.style.display = "flex";
+function setupImgFallback(img, fallback) {
+  if (!img) return;
+  img.addEventListener("error", function() {
+    img.style.display = "none";
+    if (fallback) fallback.style.display = "flex";
   });
 }
 
-// Hero photo fallback
+// Hero photo
 (function() {
-  var heroPhoto = document.getElementById("hero-photo");
-  var heroFallback = document.getElementById("hero-photo-fallback");
-  heroFallback.style.display = "none";
-  setupImageFallback(heroPhoto, heroFallback);
+  var p = document.getElementById("hero-photo");
+  var f = document.getElementById("hero-photo-fallback");
+  f.style.display = "none";
+  setupImgFallback(p, f);
 })();
 
 // Marquee
 document.getElementById("marquee-track").innerHTML =
   CONFIG.marquee.concat(CONFIG.marquee).map(function(m) {
-    return '<span class="marquee-item">' + escapeHtml(m) + "</span>";
+    return '<span class="marquee-item">' + esc(m) + "</span>";
   }).join("");
 
 // About skills
 document.getElementById("about-skills-container").innerHTML =
   CONFIG.skills.map(function(s) {
-    return '<div class="skill-item"><span class="skill-dot"></span>' + escapeHtml(s) + "</div>";
+    return '<div class="skill-item"><span class="skill-dot"></span>' + esc(s) + "</div>";
   }).join("");
 
 // About docs
 document.getElementById("about-doc-links").innerHTML =
   CONFIG.aboutDocs.map(function(d) {
-    var isPlaceholder = d.file.indexOf("PLACEHOLDER") === 0;
+    var ph = d.file.indexOf("PLACEHOLDER") === 0;
     return '<a href="' + d.file + '" class="doc-link" target="_blank"><span class="doc-icon">↗</span> ' +
-      escapeHtml(d.label) + (isPlaceholder ? '<span class="doc-placeholder">[ add PDF ]</span>' : "") + "</a>";
+      esc(d.label) + (ph ? '<span class="doc-placeholder">[ add PDF ]</span>' : "") + "</a>";
   }).join("");
 
-// Contact links
+// Contact
 document.getElementById("contact-links-container").innerHTML =
   CONFIG.contact.map(function(c) {
     var cls = "contact-link" + (c.primary ? " primary" : "");
-    var target = c.external ? ' target="_blank"' : "";
-    var prefix = c.primary ? "↗ " : "";
-    return '<a href="' + c.href + '" class="' + cls + '"' + target + ">" + prefix + escapeHtml(c.label) + "</a>";
+    var tgt = c.external ? ' target="_blank"' : "";
+    return '<a href="' + c.href + '" class="' + cls + '"' + tgt + ">" + (c.primary ? "↗ " : "") + esc(c.label) + "</a>";
   }).join("");
 
-/* TIMELINE */
+/* =====================================================================
+   DRIVE EMBEDS BUILDER
+   ===================================================================== */
+function buildDriveEmbeds(files) {
+  if (!files || !files.length) return "";
+  var html = '<div class="modal-section-label">Files &amp; Media</div>';
+  for (var i = 0; i < files.length; i++) {
+    var f = files[i];
+    var cls = f.type === "photo" ? "modal-drive-frame photo-frame" : "modal-drive-frame";
+    html += '<div class="modal-drive-section">' +
+      '<div class="modal-drive-title">' + esc(f.label) + '</div>' +
+      '<div class="' + cls + '">' +
+        '<iframe src="' + driveEmbedUrl(f.id) + '" title="' + esc(f.label) + '" allowfullscreen loading="lazy"></iframe>' +
+      '</div>' +
+    '</div>';
+  }
+  return html;
+}
+
+/* =====================================================================
+   TIMELINE
+   ===================================================================== */
 var timelineContainer = document.getElementById("timeline-container");
 
 function renderTimeline(filter) {
@@ -697,13 +677,13 @@ function renderTimeline(filter) {
     var catLabel = exp.category === "research" ? "Research" : exp.category === "internship" ? "Internship" : "Involvement";
     var hidden = (filter !== "all" && exp.category !== filter) ? "hidden-filter" : "";
     return (
-      '<div class="timeline-item ' + hidden + '" data-category="' + exp.category + '" data-exp-id="' + exp.id + '" tabindex="0">' +
+      '<div class="timeline-item ' + hidden + '" data-exp-id="' + exp.id + '" tabindex="0">' +
         '<div class="timeline-dot"></div>' +
         '<div class="timeline-card">' +
-          '<div class="timeline-date">' + escapeHtml(exp.date) + '<span class="timeline-cat">' + catLabel + "</span></div>" +
-          '<div class="timeline-role">' + escapeHtml(exp.role) + "</div>" +
-          '<div class="timeline-company">' + escapeHtml(exp.org) + "</div>" +
-          '<div class="timeline-desc">' + escapeHtml(exp.summary) + "</div>" +
+          '<div class="timeline-date">' + esc(exp.date) + '<span class="timeline-cat">' + catLabel + "</span></div>" +
+          '<div class="timeline-role">' + esc(exp.role) + "</div>" +
+          '<div class="timeline-company">' + esc(exp.org) + "</div>" +
+          '<div class="timeline-desc">' + esc(exp.summary) + "</div>" +
           '<div class="timeline-expand-hint"><span class="plus">+</span> Click to expand details</div>' +
         "</div>" +
       "</div>"
@@ -714,80 +694,60 @@ function renderTimeline(filter) {
 
   var items = timelineContainer.querySelectorAll(".timeline-item");
   for (var i = 0; i < items.length; i++) {
-    items[i].addEventListener("click", onTimelineItemClick);
-    items[i].addEventListener("keydown", onCardKeydown);
+    items[i].addEventListener("click", function(e) { openExperienceModal(e.currentTarget.getAttribute("data-exp-id")); });
+    items[i].addEventListener("keydown", function(e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.currentTarget.click(); } });
     revealObserver.observe(items[i]);
   }
 }
 
-function onTimelineItemClick(e) {
-  var id = e.currentTarget.getAttribute("data-exp-id");
-  openExperienceModal(id);
-}
-
-function onCardKeydown(e) {
-  if (e.key === "Enter" || e.key === " ") {
-    e.preventDefault();
-    e.currentTarget.click();
-  }
-}
-
-var filterButtons = document.querySelectorAll(".timeline-filter");
-for (var fi = 0; fi < filterButtons.length; fi++) {
-  filterButtons[fi].addEventListener("click", function(e) {
-    for (var k = 0; k < filterButtons.length; k++) filterButtons[k].classList.remove("active");
+document.querySelectorAll(".timeline-filter").forEach(function(btn) {
+  btn.addEventListener("click", function(e) {
+    document.querySelectorAll(".timeline-filter").forEach(function(b) { b.classList.remove("active"); });
     e.currentTarget.classList.add("active");
     renderTimeline(e.currentTarget.getAttribute("data-filter"));
   });
-}
+});
 
-function findExperience(id) {
-  for (var i = 0; i < CONFIG.experience.length; i++) {
-    if (CONFIG.experience[i].id === id) return CONFIG.experience[i];
-  }
-  return null;
-}
+function findExp(id) { return CONFIG.experience.find(function(e) { return e.id === id; }) || null; }
 
 function openExperienceModal(id) {
-  var exp = findExperience(id);
+  var exp = findExp(id);
   if (!exp) return;
   document.getElementById("modal-title").textContent = exp.role;
 
   var html = "";
-  html += '<div class="modal-visual"><div class="modal-visual-label">' + escapeHtml(exp.org) + '</div>' +
-          '<div class="modal-visual-tag">' + escapeHtml(exp.date) + "</div></div>";
-  html += '<div class="modal-section-label">Description</div><p class="modal-desc">' + escapeHtml(exp.description) + "</p>";
+
+  if (exp.heroImage) {
+    html += '<div class="modal-visual" style="padding:0;">' +
+      '<img src="' + esc(exp.heroImage) + '" alt="' + esc(exp.role) + '" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">' +
+      '<div class="modal-visual-tag">' + esc(exp.date) + '</div></div>';
+  } else {
+    html += '<div class="modal-visual"><div class="modal-visual-label">' + esc(exp.org) + '</div>' +
+      '<div class="modal-visual-tag">' + esc(exp.date) + '</div></div>';
+  }
+
+  html += '<div class="modal-section-label">Description</div><p class="modal-desc">' + esc(exp.description) + "</p>";
 
   if (exp.skillsLearned && exp.skillsLearned.length) {
     html += '<div class="modal-section-label">Skills Learned</div><div class="modal-findings">';
-    for (var i = 0; i < exp.skillsLearned.length; i++) {
-      html += '<div class="modal-finding-item">' + escapeHtml(exp.skillsLearned[i]) + "</div>";
-    }
+    exp.skillsLearned.forEach(function(s) { html += '<div class="modal-finding-item">' + esc(s) + "</div>"; });
     html += "</div>";
   }
   if (exp.toolsUsed && exp.toolsUsed.length) {
     html += '<div class="modal-section-label">Tools Used</div><div class="modal-details">';
-    for (var j = 0; j < exp.toolsUsed.length; j++) {
-      html += '<div class="modal-detail"><div class="modal-detail-value">' + escapeHtml(exp.toolsUsed[j]) + "</div></div>";
-    }
+    exp.toolsUsed.forEach(function(t) { html += '<div class="modal-detail"><div class="modal-detail-value">' + esc(t) + "</div></div>"; });
     html += "</div>";
   }
-  if (exp.files && exp.files.length) {
-    html += '<div class="modal-section-label">Images & References</div><div class="modal-attachments">';
-    for (var k = 0; k < exp.files.length; k++) {
-      var f = exp.files[k];
-      var isPlaceholder = f.file.indexOf("PLACEHOLDER") === 0;
-      html += '<a href="' + f.file + '" target="_blank" class="modal-attach-item"><span class="modal-attach-icon">↗</span>' +
-        escapeHtml(f.label) + (isPlaceholder ? '<span class="modal-attach-note">[ add file: ' + f.file + ' ]</span>' : "") + "</a>";
-    }
-    html += "</div>";
-  }
+
+  html += buildDriveEmbeds(exp.driveFiles);
 
   document.getElementById("modal-body").innerHTML = html;
-  openModalOverlay();
+  openModal();
 }
 
-/* PROJECTS */
+/* =====================================================================
+   PROJECTS
+   ===================================================================== */
 var projectsContainer = document.getElementById("projects-container");
 
 function renderProjects() {
@@ -795,15 +755,15 @@ function renderProjects() {
     return (
       '<div class="project-tile" data-proj-id="' + p.id + '" tabindex="0">' +
         '<div class="project-tile-img">' +
-          '<img src="' + p.image + '" alt="' + escapeHtml(p.name) + '" class="proj-img">' +
-          '<div class="img-fallback" style="display:none;">' + escapeHtml(p.name) + "</div>" +
-          (p.status ? '<div class="project-tile-status">' + escapeHtml(p.status) + "</div>" : "") +
+          '<img src="' + p.image + '" alt="' + esc(p.name) + '" class="proj-img">' +
+          '<div class="img-fallback" style="display:none;">' + esc(p.name) + "</div>" +
+          (p.status ? '<div class="project-tile-status">' + esc(p.status) + "</div>" : "") +
         "</div>" +
         '<div class="project-tile-body">' +
-          '<div class="project-tile-tags">' + p.tags.map(function(t) { return '<span class="project-tile-tag">' + escapeHtml(t) + "</span>"; }).join("") + "</div>" +
-          '<div class="project-tile-name">' + escapeHtml(p.name) + "</div>" +
-          '<div class="project-tile-org">' + escapeHtml(p.org) + "</div>" +
-          '<div class="project-tile-desc">' + escapeHtml(p.shortDesc) + "</div>" +
+          '<div class="project-tile-tags">' + p.tags.map(function(t) { return '<span class="project-tile-tag">' + esc(t) + "</span>"; }).join("") + "</div>" +
+          '<div class="project-tile-name">' + esc(p.name) + "</div>" +
+          '<div class="project-tile-org">' + esc(p.org) + "</div>" +
+          '<div class="project-tile-desc">' + esc(p.shortDesc) + "</div>" +
           '<div class="project-tile-cta">View details ↗</div>' +
         "</div>" +
       "</div>"
@@ -812,248 +772,136 @@ function renderProjects() {
 
   document.getElementById("projects-count").textContent = CONFIG.projects.length + " builds";
 
-  var tiles = projectsContainer.querySelectorAll(".project-tile");
-  for (var i = 0; i < tiles.length; i++) {
-    tiles[i].addEventListener("click", onProjectTileClick);
-    tiles[i].addEventListener("keydown", onCardKeydown);
-    var img = tiles[i].querySelector(".proj-img");
-    var fallback = tiles[i].querySelector(".img-fallback");
-    setupImageFallback(img, fallback);
-  }
-}
-
-function onProjectTileClick(e) {
-  var id = e.currentTarget.getAttribute("data-proj-id");
-  openProjectModal(id);
-}
-
-function findProject(id) {
-  for (var i = 0; i < CONFIG.projects.length; i++) {
-    if (CONFIG.projects[i].id === id) return CONFIG.projects[i];
-  }
-  return null;
+  document.querySelectorAll(".project-tile").forEach(function(tile) {
+    tile.addEventListener("click", function(e) { openProjectModal(e.currentTarget.getAttribute("data-proj-id")); });
+    tile.addEventListener("keydown", function(e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.currentTarget.click(); } });
+    setupImgFallback(tile.querySelector(".proj-img"), tile.querySelector(".img-fallback"));
+  });
 }
 
 function openProjectModal(id) {
-  var p = findProject(id);
+  var p = CONFIG.projects.find(function(x) { return x.id === id; });
   if (!p) return;
   document.getElementById("modal-title").textContent = p.name;
 
-  var html = "";
-  html += '<div class="modal-visual"><div class="modal-visual-label">' + escapeHtml(p.org) + "</div>" +
-          (p.status ? '<div class="modal-visual-tag">' + escapeHtml(p.status) + "</div>" : "") + "</div>";
-  html += '<div class="modal-section-label">Full Description</div><p class="modal-desc">' + escapeHtml(p.fullDesc) + "</p>";
+  var html = '<div class="modal-visual"><div class="modal-visual-label">' + esc(p.org) + "</div>" +
+    (p.status ? '<div class="modal-visual-tag">' + esc(p.status) + "</div>" : "") + "</div>";
+
+  html += '<div class="modal-section-label">Full Description</div><p class="modal-desc">' + esc(p.fullDesc) + "</p>";
 
   if (p.skillsUsed && p.skillsUsed.length) {
     html += '<div class="modal-section-label">Skills Used</div><div class="modal-findings">';
-    for (var i = 0; i < p.skillsUsed.length; i++) html += '<div class="modal-finding-item">' + escapeHtml(p.skillsUsed[i]) + "</div>";
+    p.skillsUsed.forEach(function(s) { html += '<div class="modal-finding-item">' + esc(s) + "</div>"; });
     html += "</div>";
   }
   if (p.skillsLearned && p.skillsLearned.length) {
     html += '<div class="modal-section-label">Skills Learned</div><div class="modal-findings">';
-    for (var j = 0; j < p.skillsLearned.length; j++) html += '<div class="modal-finding-item">' + escapeHtml(p.skillsLearned[j]) + "</div>";
+    p.skillsLearned.forEach(function(s) { html += '<div class="modal-finding-item">' + esc(s) + "</div>"; });
     html += "</div>";
   }
   if (p.proof) {
-    html += '<div class="modal-section-label">Proof of Completion</div><p class="modal-desc" style="margin-bottom:1.5rem;">' + escapeHtml(p.proof) + "</p>";
+    html += '<div class="modal-section-label">Proof of Completion</div><p class="modal-desc" style="margin-bottom:1.5rem;">' + esc(p.proof) + "</p>";
   }
-  html += '<div class="modal-section-label">Files</div><div class="modal-attachments">';
-  if (p.files && p.files.length) {
-    for (var k = 0; k < p.files.length; k++) {
-      var f = p.files[k];
-      var isPlaceholder = f.file.indexOf("PLACEHOLDER") === 0;
-      html += '<a href="' + f.file + '" target="_blank" class="modal-attach-item"><span class="modal-attach-icon">↗</span>' +
-        escapeHtml(f.label) + (isPlaceholder ? '<span class="modal-attach-note">[ add file: ' + f.file + ' ]</span>' : "") + "</a>";
-    }
+
+  if (p.driveFiles && p.driveFiles.length) {
+    html += buildDriveEmbeds(p.driveFiles);
   } else {
-    html += '<div class="modal-attach-item" style="cursor:default;"><span class="modal-attach-icon">+</span>No files added yet — add entries to this project\'s "files" array in CONFIG</div>';
+    html += '<div class="modal-section-label">Files</div><div class="modal-no-files">No files added yet — add entries to this project\'s "driveFiles" array in CONFIG.</div>';
   }
-  html += "</div>";
 
   document.getElementById("modal-body").innerHTML = html;
-  openModalOverlay();
+  openModal();
 }
 
-/* MODAL open/close */
+/* =====================================================================
+   MODAL
+   ===================================================================== */
 var modalOverlay = document.getElementById("modal-overlay");
-function openModalOverlay() {
-  modalOverlay.classList.add("open");
-  document.body.style.overflow = "hidden";
-}
-function closeModalOverlay() {
-  modalOverlay.classList.remove("open");
-  document.body.style.overflow = "";
-}
-document.getElementById("modal-close-btn").addEventListener("click", closeModalOverlay);
-modalOverlay.addEventListener("click", function(e) {
-  if (e.target === modalOverlay) closeModalOverlay();
-});
-document.addEventListener("keydown", function(e) {
-  if (e.key === "Escape") closeModalOverlay();
-});
-
-/* Resume upload preview (session only) */
-var resumeInput = document.getElementById("resume-upload-input");
-resumeInput.addEventListener("change", function(e) {
-  var file = e.target.files[0];
-  if (!file) return;
-  var blobUrl = URL.createObjectURL(file);
-  document.getElementById("resume-view-btn").setAttribute("href", blobUrl);
-  var dl = document.getElementById("resume-download-btn");
-  dl.setAttribute("href", blobUrl);
-  dl.setAttribute("download", file.name);
-  document.getElementById("resume-filename").textContent = file.name;
-  document.getElementById("resume-updated").textContent = "Previewing — uploaded " + new Date().toLocaleDateString();
-});
+function openModal() { modalOverlay.classList.add("open"); document.body.style.overflow = "hidden"; }
+function closeModal() { modalOverlay.classList.remove("open"); document.body.style.overflow = ""; }
+document.getElementById("modal-close-btn").addEventListener("click", closeModal);
+modalOverlay.addEventListener("click", function(e) { if (e.target === modalOverlay) closeModal(); });
+document.addEventListener("keydown", function(e) { if (e.key === "Escape") closeModal(); });
 
 /* =====================================================================
    CURSOR
    ===================================================================== */
 var cursorEl = document.getElementById("cursor");
 var ringEl = document.getElementById("cursor-ring");
-var mx = window.innerWidth / 2, my = window.innerHeight / 2, rx = mx, ry = my;
-
+var mx = window.innerWidth/2, my = window.innerHeight/2, rx = mx, ry = my;
 document.addEventListener("mousemove", function(e) {
-  mx = e.clientX;
-  my = e.clientY;
-  cursorEl.style.left = mx + "px";
-  cursorEl.style.top = my + "px";
+  mx = e.clientX; my = e.clientY;
+  cursorEl.style.left = mx + "px"; cursorEl.style.top = my + "px";
 });
-
 setInterval(function() {
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
-  ringEl.style.left = rx + "px";
-  ringEl.style.top = ry + "px";
+  rx += (mx-rx)*0.12; ry += (my-ry)*0.12;
+  ringEl.style.left = rx + "px"; ringEl.style.top = ry + "px";
 }, 16);
 
 function bindHoverTargets() {
-  var hoverables = document.querySelectorAll(
-    "a, button, .timeline-item, .project-tile, .skill-item, .doc-link, .contact-link, input[type=file]"
-  );
-  for (var i = 0; i < hoverables.length; i++) {
-    hoverables[i].addEventListener("mouseenter", function() { document.body.classList.add("hovering"); });
-    hoverables[i].addEventListener("mouseleave", function() { document.body.classList.remove("hovering"); });
-  }
+  document.querySelectorAll("a, button, .timeline-item, .project-tile, .skill-item, .doc-link, .contact-link").forEach(function(el) {
+    el.addEventListener("mouseenter", function() { document.body.classList.add("hovering"); });
+    el.addEventListener("mouseleave", function() { document.body.classList.remove("hovering"); });
+  });
 }
 
 /* =====================================================================
-   BACKGROUND CANVAS — particle network
+   CANVAS
    ===================================================================== */
 var canvas = document.getElementById("bg-canvas");
 var ctx = canvas.getContext("2d");
 var W, H, particles = [];
-
-function resizeCanvas() {
-  W = canvas.width = window.innerWidth;
-  H = canvas.height = window.innerHeight;
-}
+function resizeCanvas() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
 resizeCanvas();
-window.addEventListener("resize", function() {
-  resizeCanvas();
-  initParticles();
-});
-
+window.addEventListener("resize", function() { resizeCanvas(); initParticles(); });
 function initParticles() {
   particles = [];
-  var count = Math.floor((W * H) / 14000);
-  for (var i = 0; i < count; i++) {
-    particles.push({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
-      r: Math.random() * 1.5 + 0.5
-    });
-  }
+  var count = Math.floor((W*H)/14000);
+  for (var i=0;i<count;i++) particles.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3,r:Math.random()*1.5+0.5});
 }
 initParticles();
-
 function drawGrid() {
-  var step = 80;
-  ctx.strokeStyle = "rgba(200,255,0,0.03)";
-  ctx.lineWidth = 0.5;
-  for (var x = 0; x < W; x += step) {
-    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
-  }
-  for (var y = 0; y < H; y += step) {
-    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
-  }
-  ctx.strokeStyle = "rgba(200,255,0,0.06)";
-  var cs = 6;
-  for (var xi = step; xi < W; xi += step) {
-    for (var yi = step; yi < H; yi += step) {
-      ctx.beginPath(); ctx.moveTo(xi - cs, yi); ctx.lineTo(xi + cs, yi); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(xi, yi - cs); ctx.lineTo(xi, yi + cs); ctx.stroke();
-    }
-  }
+  var step=80;
+  ctx.strokeStyle="rgba(200,255,0,0.03)";ctx.lineWidth=0.5;
+  for(var x=0;x<W;x+=step){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+  for(var y=0;y<H;y+=step){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+  ctx.strokeStyle="rgba(200,255,0,0.06)";var cs=6;
+  for(var xi=step;xi<W;xi+=step)for(var yi=step;yi<H;yi+=step){ctx.beginPath();ctx.moveTo(xi-cs,yi);ctx.lineTo(xi+cs,yi);ctx.stroke();ctx.beginPath();ctx.moveTo(xi,yi-cs);ctx.lineTo(xi,yi+cs);ctx.stroke();}
 }
-
 function animate() {
-  ctx.clearRect(0, 0, W, H);
-  drawGrid();
-
-  for (var i = 0; i < particles.length; i++) {
-    var p = particles[i];
-    p.x += p.vx; p.y += p.vy;
-    if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
-    if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
-  }
-
-  var maxDist = 140;
-  for (var a = 0; a < particles.length; a++) {
-    for (var b = a + 1; b < particles.length; b++) {
-      var dx = particles[a].x - particles[b].x;
-      var dy = particles[a].y - particles[b].y;
-      var d = Math.sqrt(dx * dx + dy * dy);
-      if (d < maxDist) {
-        ctx.strokeStyle = "rgba(200,255,0," + ((1 - d / maxDist) * 0.25) + ")";
-        ctx.lineWidth = 0.5;
-        ctx.beginPath();
-        ctx.moveTo(particles[a].x, particles[a].y);
-        ctx.lineTo(particles[b].x, particles[b].y);
-        ctx.stroke();
-      }
-    }
-    ctx.fillStyle = "rgba(200,255,0,0.5)";
-    ctx.beginPath();
-    ctx.arc(particles[a].x, particles[a].y, particles[a].r, 0, Math.PI * 2);
-    ctx.fill();
+  ctx.clearRect(0,0,W,H);drawGrid();
+  for(var i=0;i<particles.length;i++){var p=particles[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;}
+  var maxDist=140;
+  for(var a=0;a<particles.length;a++){
+    for(var b=a+1;b<particles.length;b++){var dx=particles[a].x-particles[b].x,dy=particles[a].y-particles[b].y,d=Math.sqrt(dx*dx+dy*dy);if(d<maxDist){ctx.strokeStyle="rgba(200,255,0,"+(1-d/maxDist)*0.25+")";ctx.lineWidth=0.5;ctx.beginPath();ctx.moveTo(particles[a].x,particles[a].y);ctx.lineTo(particles[b].x,particles[b].y);ctx.stroke();}}
+    ctx.fillStyle="rgba(200,255,0,0.5)";ctx.beginPath();ctx.arc(particles[a].x,particles[a].y,particles[a].r,0,Math.PI*2);ctx.fill();
   }
   requestAnimationFrame(animate);
 }
 animate();
 
 /* =====================================================================
-   SCROLL REVEAL + active nav highlight
+   SCROLL REVEAL + NAV
    ===================================================================== */
 var revealObserver = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      setTimeout(function() { entry.target.classList.add("visible"); }, 100);
-    }
-  });
-}, { threshold: 0.12 });
+  entries.forEach(function(entry) { if(entry.isIntersecting) setTimeout(function(){entry.target.classList.add("visible");},100); });
+}, {threshold:0.12});
 
-var revealEls = document.querySelectorAll(".reveal");
-for (var ri = 0; ri < revealEls.length; ri++) revealObserver.observe(revealEls[ri]);
+document.querySelectorAll(".reveal").forEach(function(el) { revealObserver.observe(el); });
 
 var navLinks = document.querySelectorAll(".nav-links a");
-var sectionEls = document.querySelectorAll("section[id]");
 var navObserver = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      for (var ni = 0; ni < navLinks.length; ni++) navLinks[ni].classList.remove("active");
-      var match = document.querySelector('.nav-links a[href="#' + entry.target.id + '"]');
-      if (match) match.classList.add("active");
+    if(entry.isIntersecting) {
+      navLinks.forEach(function(a){a.classList.remove("active");});
+      var m = document.querySelector('.nav-links a[href="#'+entry.target.id+'"]');
+      if(m) m.classList.add("active");
     }
   });
-}, { threshold: 0.4 });
-for (var si = 0; si < sectionEls.length; si++) navObserver.observe(sectionEls[si]);
+},{threshold:0.4});
+document.querySelectorAll("section[id]").forEach(function(s){navObserver.observe(s);});
 
-/* =====================================================================
-   INITIAL RENDER (order matters: render content, THEN bind cursor hover)
-   ===================================================================== */
+/* INIT */
 renderTimeline("all");
 renderProjects();
 bindHoverTargets();
